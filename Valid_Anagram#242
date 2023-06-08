@@ -1,0 +1,20 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        sorted_s = sorted(s.lower())
+        sorted_t =  sorted(t.lower())
+        if sorted_s == sorted_t:
+            return True
+        else:
+            return False
+
+
+s = "anagram"
+t = "nagaram"
+s1 = "rat"
+t1 = "car"
+sol = Solution()
+res = sol.isAnagram(s,t)
+print(res)
+res1 = sol.isAnagram(s1,t1)
+print(res1)
+

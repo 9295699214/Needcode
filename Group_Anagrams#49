@@ -1,0 +1,20 @@
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        dict = {}
+        for word in strs:
+            key = tuple(sorted(word))
+            dict[key] = dict.get(key, []) + [word]
+        return dict.values()
+    
+
+strs = ["eat","tea","tan","ate","nat","bat"]
+strs1 = [""]
+strs2 = ["a"]
+sol = Solution()
+res= sol.groupAnagrams(strs)
+print(res)
+res1= sol.groupAnagrams(strs1)
+print(res1)
+res2= sol.groupAnagrams(strs2)
+print(res2)
+

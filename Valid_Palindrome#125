@@ -1,0 +1,32 @@
+class Solution:
+    def isPalindrome(self,s):
+        left,right = 0, len(s)-1
+        if not s:
+            return False
+        while(left<right):
+            str_left = s[left].lower()
+            str_right = s[right].lower()
+            if( (ord('a')<= ord(str_left) <=ord('z')) and (ord('a')<= ord(str_right) <=ord('z'))):
+                if str_left != str_right:
+                    return False
+                left += 1
+                right -= 1
+            else:
+                if not str_left.isalnum():
+                    left += 1
+                if not str_right.isalnum():
+                    right -= 1
+        return True
+
+s = "A man, a plan, a canal: Panama"
+s1 = " "
+s2 ="race a car"
+sol = Solution()
+res = sol.isPalindrome(s)
+res1 = sol.isPalindrome(s1)
+res2 = sol.isPalindrome(s2)
+print(res)
+print(res1)
+print(res2)
+
+

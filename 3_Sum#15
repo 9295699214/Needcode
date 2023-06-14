@@ -1,0 +1,32 @@
+class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        output = []
+        nums.sort()
+        for i in range(len(nums)-2):
+            a = nums[i]
+            start = i+1
+            end = len(nums)-1
+            while start < end:
+                b = nums[start]
+                c = nums[end]
+                if (a+b+c) == 0:
+                    if [a, b, c] not in output:
+                        output.append([a,b,c])
+                    start+=1
+                    end-=1
+                elif (a+b+c) > 0:
+                    end-=1
+                else:
+                    start+=1
+        return output
+
+nums = [-1,0,1,2,-1,-4]  
+nums1 = [0,1,1]
+nums2 = [0,0,0]
+sol = Solution()
+res = sol.threeSum(nums)
+print(res)
+res1 = sol.threeSum(nums1)
+print(res1)
+res2 = sol.threeSum(nums2)
+print(res2)

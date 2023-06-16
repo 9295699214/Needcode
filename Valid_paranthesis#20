@@ -1,0 +1,28 @@
+class Solution:
+    def isValid(self, s):
+        if len(s) == 0 or len(s)%2 != 0:
+            return False
+        closingParentheses = {
+             "(": ")",
+            "{": "}",
+            "[": "]"
+        }
+    
+        stack = []
+        for i in range(len(s)):
+            if s[i] in closingParentheses:
+                stack.append(s[i])
+            elif len(stack) != 0 and s[i] != closingParentheses[stack.pop()]:
+                return False
+    
+        return len(stack) == 0
+s = "()"
+s1 = "()[]{}"
+s2 = "(]"
+sol = Solution()
+res = sol.isValid(s)
+print(res)
+res1 = sol.isValid(s1)
+print(res1)
+res2 = sol.isValid(s2)
+print(res2)

@@ -1,0 +1,19 @@
+class Solution:
+    def findDisappearedNumbers(self, nums: list[int]) -> list[int]:
+        new_arr =[]
+        d = dict.fromkeys(nums, nums)
+        for x in range(1,len(nums)+1):
+            if x in d:
+                continue
+            else:
+                new_arr.append(x)
+        return new_arr
+    
+    
+nums = [4,3,2,7,8,2,3,1]
+nums1 = [1,1]
+sol = Solution()
+res = sol.findDisappearedNumbers(nums)
+print(res)
+res1 = sol.findDisappearedNumbers(nums1)
+print(res1)

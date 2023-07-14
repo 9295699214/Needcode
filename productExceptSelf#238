@@ -1,0 +1,18 @@
+class Solution:
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
+        new = [1] * len(nums)
+        for x in range(len(nums)):
+            for y in range(len(nums)):
+                if (x == y):
+                    continue
+                else:
+                    new[x]*=nums[y]
+            
+        return new
+nums = [1,2,3,4]   
+nums1 = [-1,1,0,-3,3]
+sol = Solution()
+res = sol.productExceptSelf(nums)
+print(res)
+res1 = sol.productExceptSelf(nums1)
+print(res1)

@@ -19,7 +19,7 @@ class Solution:
 s=  "())"
 s1 =  "((("
 sol = Solution()
-res = sol.
-print(s)
+res = sol.minAddToMakeValid(s)
+print(res)
 res1 = sol.minAddToMakeValid(s1)
-print(s1) 
+print(res1) 

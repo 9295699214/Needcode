@@ -1,0 +1,23 @@
+import heapq as heap
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        new_arr = []
+        new_arr1 = []
+        for  l in points:
+            dist = math.sqrt((l[0]-0)**2 + (l[1]-0)**2)
+            heap.heappush(new_arr,(dist,l))
+        while(k>0):
+            new_arr1.append(heap.heappop(new_arr)[1])
+            k-=1
+        return new_arr1
+        
+
+sol = Solution()
+points = [[1,3],[-2,2]]
+k = 1
+points1 = [[3,3],[5,-1],[-2,4]]
+k1 = 2
+res = sol.kCloset(points,k)
+res1 = sol.kCloset(points1,k1)
+print(res)
+print(res1)

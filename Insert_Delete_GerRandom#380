@@ -1,0 +1,19 @@
+class RandomizedSet:
+    randomSet = {}
+    def __init__(self):
+        self.dic = {}
+
+    def insert(self, val):
+        if val not in self.dic:
+            self.dic[val] = True
+            return True
+        return False
+        
+    def remove(self, val):
+        if val in self.dic:
+            del self.dic[val]
+            return True
+        return False
+        
+    def getRandom(self):
+        return list(self.dic)[randint(0, len(self.dic) - 1)] 

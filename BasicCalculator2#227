@@ -25,6 +25,7 @@ class Solution:
                 pre_op = c
         return sum(stack)
 
+
 sol = Solution()
 s= "3+2*2"
 s1 = "3/2"
